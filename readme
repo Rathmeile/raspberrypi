@@ -1,0 +1,15 @@
+http://www.dreamsyssoft.com/python-scripting-tutorial/create-simple-rest-web-service-with-python.php?/archives/6-Create-a-simple-REST-web-service-with-Python.html
+
+sudo easy_install web.py
+
+create rest.py
+create user_data.xml
+
+run: ./rest.py
+
+Example URLs:
+http://localhost:8080/users
+http://localhost:8080/users/1
+http://localhost:8080/users/2
+http://localhost:8080/users/3
+
