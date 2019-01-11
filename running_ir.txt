@@ -1,0 +1,24 @@
+#/bin/cat
+
+To see what remotes are present:
+irsend list "" ""
+
+To use a remote once:
+/etc/init.d/lirc stop
+lircd -d /dev/lirc0
+/etc/init.d/lirc start
+irsend SEND_ONCE sky_rev10 info
+
+
+To test the receiver:
+/etc/init.d/lirc stop
+mode2 -s /dev/lirc0
+# Press remote buttons, should see space/pulse lines appear
+
+To record commands:
+/etc/init.d/lirc stop
+# irrecord --list-namespace	# param gives hints for names to use
+irrecord -d /dev/lirc0 ~/remoteCommands.conf
+# Can then save this to /etc/lirc/lircd.conf as a remote that can be used
+
+

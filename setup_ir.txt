@@ -1,0 +1,52 @@
+#!/cat
+
+=======================
+Official instructions:
+=======================
+http://www.raspberrypiwiki.com/index.php/Raspberry_Pi_IR_Control_Expansion_Board
+
+1)
+sudo apt-get install lirc
+
+2)
+
+echo " dtoverlay=lirc-rpi,gpio_in_pin=18,gpio_out_pin=17 " >>/boot/config.txt
+
+3) 
+echo "
+lirc_dev
+lirc_rpi gpio_in_pin=18 gpio_out_pin=17
+" >> /etc/modules
+
+4) Modify /etc/lirc/hardware
+LIRCD_ARGS="--uinput --listen"
+DRIVER=default
+DEVICE="/dev/lirc0"
+MODULES="lirc_rpi"
+
+5) Edit /etc/lirc/lirc_options.conf
+driver=default
+device=/dev/lirc0
+
+6) Restart LIRC
+sudo /etc/init.d/lirc stop
+sudo /etc/inir.d/lirc start
+
+#=================
+# Actual: 
+#=================
+1) sudo apt-get install lirc
+
+2)
+echo "
+# Additional overlays and parameters are documented /boot/overlays/README
+dtoverlay=lirc-rpi,gpio_in_pin=18
+dtoverlay=lirc-rpi,gpio_out_pin=17
+" >>/boot/config.txt
+
+3) /etc/lirc/hardware
+LIRCD_ARGS=""
+DRIVER=devinput
+DEVICE=/dev/lirc0
+MODULES=""
+
