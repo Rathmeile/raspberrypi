@@ -1,0 +1,11 @@
+# Pi #1 - My original
+# Raspberry Pi (C)2011 - 1B
+# E2212RS V1.0B1.1
+
+# Pi #2 - My Backup/Media Pi
+# Raspberry Pi (C)2011.12 - 1B
+
+
+# Raspberry Pi 4 - Model B
+# FCC ID: 2ABCB-RPI4B
+# IC: 20953-RPI4B
